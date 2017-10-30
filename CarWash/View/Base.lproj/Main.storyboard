@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Car Table View-->
+        <!--Cars List-->
         <scene sceneID="0TY-xn-CIw">
             <objects>
                 <viewController id="EmL-zS-nr4" customClass="CarTableView" customModule="CarWash" customModuleProvider="target" sceneMemberID="viewController">
@@ -29,7 +29,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="A0K-Ii-JGu" kind="showDetail" identifier="CarDetails" id="OzA-WX-zWX"/>
+                                            <segue destination="A0K-Ii-JGu" kind="show" identifier="CarDetails" id="EAO-yX-49M"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -44,7 +44,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="NDI-Tk-Xgz"/>
                     </view>
-                    <navigationItem key="navigationItem" id="tDS-Q0-2Xw"/>
+                    <navigationItem key="navigationItem" title="Cars List" id="tDS-Q0-2Xw"/>
                     <connections>
                         <outlet property="carTableView" destination="G9Z-kT-Y0d" id="g1G-Lf-Y8F"/>
                     </connections>
@@ -72,8 +72,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="fKF-Lo-U00"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Car Details" id="JNZ-sp-G85"/>
                     <connections>
-                        <outlet property="plateLabel" destination="Wec-Ex-vAJ" id="Auf-8F-qd0"/>
+                        <outlet property="plateLabel" destination="Wec-Ex-vAJ" id="pj7-cO-IuH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JvO-ed-Cce" userLabel="First Responder" sceneMemberID="firstResponder"/>

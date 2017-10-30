@@ -47,8 +47,8 @@ class CarTableView: UIViewController, UITableViewDelegate, UITableViewDataSource
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        
         if segue.identifier == "CarDetails" {
+            
             let cell  = sender as! UITableViewCell
             let indexPath = carTableView.indexPath(for: cell)
             
@@ -57,5 +57,6 @@ class CarTableView: UIViewController, UITableViewDelegate, UITableViewDataSource
             }
         }
     }
+    
 }
 
