@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="HelveticaNeue.ttc">
+            <string>HelveticaNeue-Bold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="customCarCell" rowHeight="81" id="KGk-i7-Jjw" customClass="CustomCarCell" customModule="CarWash" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="81"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="287" height="80.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="audi_logo" translatesAutoresizingMaskIntoConstraints="NO" id="lZJ-ke-r9T">
+                        <rect key="frame" x="5" y="3" width="75" height="75"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="75" id="KU2-l2-o4j"/>
+                            <constraint firstAttribute="width" constant="75" id="xqk-G4-yxg"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Model" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TzL-Fy-kL5">
+                        <rect key="frame" x="88" y="8" width="84" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="IwT-aF-k3J"/>
+                            <constraint firstAttribute="width" constant="84" id="pwV-Se-gVm"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Plate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gEv-dd-wCk">
+                        <rect key="frame" x="194" y="8" width="100" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="Q5B-gl-0Ke"/>
+                            <constraint firstAttribute="width" constant="100" id="nCU-gd-gdi"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="gEv-dd-wCk" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="HV4-8v-fNj"/>
+                    <constraint firstItem="lZJ-ke-r9T" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="XMa-tv-LQ9"/>
+                    <constraint firstItem="TzL-Fy-kL5" firstAttribute="leading" secondItem="lZJ-ke-r9T" secondAttribute="trailing" constant="8" id="dEu-mW-S9v"/>
+                    <constraint firstItem="lZJ-ke-r9T" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="3" id="dtT-z2-FhW"/>
+                    <constraint firstItem="TzL-Fy-kL5" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="frs-tD-U9f"/>
+                    <constraint firstItem="gEv-dd-wCk" firstAttribute="leading" secondItem="TzL-Fy-kL5" secondAttribute="trailing" constant="22" id="rTS-PL-2vk"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="brandLogoImage" destination="lZJ-ke-r9T" id="3vh-Vd-Hzh"/>
+                <outlet property="modelNameLabel" destination="TzL-Fy-kL5" id="Fbr-wn-RbE"/>
+                <outlet property="plateLabel" destination="gEv-dd-wCk" id="VOD-pp-p8o"/>
+            </connections>
+            <point key="canvasLocation" x="-255" y="64.5"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="audi_logo" width="32" height="20"/>
+    </resources>
+</document>
