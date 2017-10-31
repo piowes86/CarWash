@@ -5,6 +5,8 @@ class CarDetails2: UIViewController {
     // MARK: Instance variables -
     
     var carDetails : Car!
+    var carDoorStatus = false
+    var paymentStatus = false
     
     // MARK: IBOutlets -
     
@@ -17,7 +19,8 @@ class CarDetails2: UIViewController {
     @IBOutlet weak var adoptionDateLabel: UILabel!
     @IBOutlet weak var completionTimeLimitLabel: UILabel!
     
-    @IBOutlet weak var openCloseCarButton: UIButton!
+    
+    @IBOutlet var openCloseCarButton: UIButton!
     @IBOutlet weak var payForCarWashButton: UIButton!
     
     // MARK: System Methods -
@@ -36,10 +39,27 @@ class CarDetails2: UIViewController {
     
     // MARK: IBActions -
     
-    @IBAction func openCLoseCar(_ sender: UIButton) {
+    @IBAction func openCLoseCar(_ sender: UIButton!) {
+        
+        if carDoorStatus {
+            openCloseCarButton.setTitle("Open Car", for: .normal)
+            openCloseCarButton.backgroundColor = UIColor(red: 78/255, green: 180/255, blue: 242/255, alpha: 1.0)
+        } else {
+            openCloseCarButton.setTitle("Close Car", for: .normal)
+            openCloseCarButton.backgroundColor = UIColor(red: 238/255, green: 80/255, blue: 80/255, alpha: 1.0)
+        }
+        
+        carDoorStatus = !carDoorStatus
     }
     
     @IBAction func payForCarWash(_ sender: UIButton) {
+        
+        if !paymentStatus {
+            payForCarWashButton.setTitle("CarWash Paid", for: .normal)
+            payForCarWashButton.isEnabled = false
+            payForCarWashButton.backgroundColor = UIColor(red: 238/255, green: 80/255, blue: 80/255, alpha: 1.0)
+            paymentStatus = true
+        }
     }
     
     // MARK: Custom Methods -
