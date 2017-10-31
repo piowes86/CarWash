@@ -1,6 +1,6 @@
 import UIKit
 
-class CarTableView: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class CarTableView2: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     // MARK: Instance variables -
     
@@ -17,7 +17,7 @@ class CarTableView: UIViewController, UITableViewDelegate, UITableViewDataSource
         super.viewDidLoad()
         
         for car in carListObject.carList {
-            !car.cleaned ? carList.append(car) : nil
+            car.cleaned ? carList.append(car) : nil
         }
         
         carTableView.delegate = self
@@ -39,7 +39,7 @@ class CarTableView: UIViewController, UITableViewDelegate, UITableViewDataSource
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CarCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CarCellDone", for: indexPath)
         cell.textLabel?.text = carList[indexPath.row].plate
         
         return cell
@@ -54,11 +54,12 @@ class CarTableView: UIViewController, UITableViewDelegate, UITableViewDataSource
             let cell  = sender as! UITableViewCell
             let indexPath = carTableView.indexPath(for: cell)
             
-            if let vc = segue.destination as? CarDetails {
+            if let vc = segue.destination as? CarDetails2 {
                 vc.carDetails = self.carList[(indexPath?.row)!]
             }
         }
     }
     
 }
+
 

@@ -1,6 +1,6 @@
- import UIKit
- 
- class CarDetails: UIViewController {
+import UIKit
+
+class CarDetails2: UIViewController {
     
     // MARK: Instance variables -
     
@@ -48,7 +48,7 @@
         
         return "Sedan"
     }
-    
+ 
     func setCarLogo(carBrand: String) {
         
         if carBrand == "Mercedes" {
@@ -64,6 +64,5 @@
         
         return status ? "Cleaned" : "Not Cleaned"
     }
- }
- 
+}
 
