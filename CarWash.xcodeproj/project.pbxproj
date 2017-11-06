@@ -14,7 +14,6 @@
 		5904EAA41FA73765000D01C3 /* CarDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5904EAA31FA73765000D01C3 /* CarDetails.swift */; };
 		5904EAAA1FA737F0000D01C3 /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5904EAA91FA737F0000D01C3 /* Car.swift */; };
 		5904EAAC1FA73AB3000D01C3 /* CarList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5904EAAB1FA73AB3000D01C3 /* CarList.swift */; };
-		5904EAAD1FA73D58000D01C3 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5904EA9D1FA71FA5000D01C3 /* Info.plist */; };
 		5970C8171FA84BF4008AF74A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5970C8161FA84BF4008AF74A /* Assets.xcassets */; };
 		5970C8231FA88BE5008AF74A /* CustomCarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5970C8211FA88BE5008AF74A /* CustomCarCell.swift */; };
 		5970C8241FA88BE5008AF74A /* CarCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5970C8221FA88BE5008AF74A /* CarCell.xib */; };
@@ -147,7 +146,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0900;
-				LastUpgradeCheck = 0900;
+				LastUpgradeCheck = 0910;
 				ORGANIZATIONNAME = "Piotr Wesolowski";
 				TargetAttributes = {
 					5904EA8D1FA71FA5000D01C3 = {
@@ -179,7 +178,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5904EAAD1FA73D58000D01C3 /* Info.plist in Resources */,
 				5904EA9C1FA71FA5000D01C3 /* LaunchScreen.storyboard in Resources */,
 				5970C8241FA88BE5008AF74A /* CarCell.xib in Resources */,
 				5970C8171FA84BF4008AF74A /* Assets.xcassets in Resources */,

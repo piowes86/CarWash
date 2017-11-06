@@ -20,8 +20,12 @@ class CarTableView: UIViewController, UITableViewDelegate, UITableViewDataSource
         carTableView.dataSource = self
         
         carTableView.register(UINib(nibName: "CarCell", bundle: nil), forCellReuseIdentifier: "customCarCell")
+        carTableView.preservesSuperviewLayoutMargins = false
         carTableView.separatorInset = UIEdgeInsets.zero // Remove TableView default spacing from left
+        carTableView.layoutMargins = UIEdgeInsets.zero
         carTableView.tableFooterView = UIView() // Remove empty rows from bottom
+        
+        self.tabBarController?.tabBar.barTintColor = UIColor.black
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -37,6 +41,8 @@ class CarTableView: UIViewController, UITableViewDelegate, UITableViewDataSource
         }
     }
     
+    
+    
     // MARK: TableView Methods -
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -51,13 +57,15 @@ class CarTableView: UIViewController, UITableViewDelegate, UITableViewDataSource
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "customCarCell", for: indexPath) as! CustomCarCell
         cell.brandLogoImage.image = setCarLogo(carBrand: carList[indexPath.row].brand)
-        cell.modelNameLabel.text = carList[indexPath.row].model
-        cell.plateLabel.text = carList[indexPath.row].plate
+        cell.executionTimeLabel.text = carList[indexPath.row].adoptionDate
+        cell.serviceTypeLabel.text = carList[indexPath.row].cleaned ? "" : "FULL CLEANING"
+        
+        cell.executionTimeLabel.text = carList[indexPath.row].adoptionDate
         
         return cell
     }
     
-    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.performSegue(withIdentifier: "CarDetails", sender: tableView.cellForRow(at: indexPath))
     }
     

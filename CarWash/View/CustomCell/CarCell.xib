@@ -10,7 +10,7 @@
     </dependencies>
     <customFonts key="customFonts">
         <array key="HelveticaNeue.ttc">
-            <string>HelveticaNeue-Bold</string>
+            <string>HelveticaNeue</string>
         </array>
     </customFonts>
     <objects>
@@ -30,41 +30,41 @@
                             <constraint firstAttribute="width" constant="75" id="xqk-G4-yxg"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Model" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TzL-Fy-kL5">
-                        <rect key="frame" x="88" y="8" width="84" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Due to: " textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y3j-iz-wGf">
+                        <rect key="frame" x="88" y="17" width="198" height="21"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="21" id="IwT-aF-k3J"/>
-                            <constraint firstAttribute="width" constant="84" id="pwV-Se-gVm"/>
+                            <constraint firstAttribute="width" constant="198" id="2iz-Ap-qk7"/>
+                            <constraint firstAttribute="height" constant="21" id="vT4-pv-9al"/>
                         </constraints>
-                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Plate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gEv-dd-wCk">
-                        <rect key="frame" x="194" y="8" width="100" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FULL CLEANING" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iba-fY-sDf">
+                        <rect key="frame" x="88" y="49" width="202" height="21"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="21" id="Q5B-gl-0Ke"/>
-                            <constraint firstAttribute="width" constant="100" id="nCU-gd-gdi"/>
+                            <constraint firstAttribute="height" constant="21" id="Hqd-nU-sqt"/>
+                            <constraint firstAttribute="width" constant="202" id="ZTl-RH-QdG"/>
                         </constraints>
-                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="gEv-dd-wCk" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="HV4-8v-fNj"/>
+                    <constraint firstItem="Iba-fY-sDf" firstAttribute="top" secondItem="Y3j-iz-wGf" secondAttribute="bottom" constant="11" id="B5i-3v-uSi"/>
+                    <constraint firstItem="Y3j-iz-wGf" firstAttribute="trailing" secondItem="Iba-fY-sDf" secondAttribute="trailing" constant="-4" id="KHa-9R-qG4"/>
                     <constraint firstItem="lZJ-ke-r9T" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="XMa-tv-LQ9"/>
-                    <constraint firstItem="TzL-Fy-kL5" firstAttribute="leading" secondItem="lZJ-ke-r9T" secondAttribute="trailing" constant="8" id="dEu-mW-S9v"/>
+                    <constraint firstItem="Y3j-iz-wGf" firstAttribute="leading" secondItem="lZJ-ke-r9T" secondAttribute="trailing" constant="8" id="b6f-G9-f5u"/>
                     <constraint firstItem="lZJ-ke-r9T" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="3" id="dtT-z2-FhW"/>
-                    <constraint firstItem="TzL-Fy-kL5" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="frs-tD-U9f"/>
-                    <constraint firstItem="gEv-dd-wCk" firstAttribute="leading" secondItem="TzL-Fy-kL5" secondAttribute="trailing" constant="22" id="rTS-PL-2vk"/>
+                    <constraint firstItem="Y3j-iz-wGf" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="17" id="wKa-GL-esc"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="brandLogoImage" destination="lZJ-ke-r9T" id="3vh-Vd-Hzh"/>
-                <outlet property="modelNameLabel" destination="TzL-Fy-kL5" id="Fbr-wn-RbE"/>
-                <outlet property="plateLabel" destination="gEv-dd-wCk" id="VOD-pp-p8o"/>
+                <outlet property="brandLogoImage" destination="lZJ-ke-r9T" id="ASZ-Z9-ZGf"/>
+                <outlet property="executionTimeLabel" destination="Y3j-iz-wGf" id="KHa-dO-AwU"/>
+                <outlet property="serviceTypeLabel" destination="Iba-fY-sDf" id="jdg-a3-PP8"/>
             </connections>
             <point key="canvasLocation" x="-229" y="65.5"/>
         </tableViewCell>

@@ -3,8 +3,8 @@ import UIKit
 class CustomCarCell: UITableViewCell {
 
     @IBOutlet var brandLogoImage: UIImageView!
-    @IBOutlet var modelNameLabel: UILabel!
-    @IBOutlet var plateLabel: UILabel!
+    @IBOutlet var executionTimeLabel: UILabel!
+    @IBOutlet var serviceTypeLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
