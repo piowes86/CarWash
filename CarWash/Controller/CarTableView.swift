@@ -48,16 +48,8 @@ class CarTableView: UIViewController, UITableViewDelegate, UITableViewDataSource
         return cell
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.performSegue(withIdentifier: "CarDetails", sender: tableView)
-        
-        var storyboard = storyboard()
-        
-        UIStoryboard; *storyboard = [UIStoryboard, storyboardWithName:@"Main" bundle:nil];
-        NSString* viewType = "YourVCIdentifier";//u can have ContactVC or NavC as other options depending on ur condition
-        UIViewController* viewController = [storyboard instantiateViewControllerWithIdentifier:viewType];
-        
-        [self.navigationController pushViewController:viewController animated:YES];
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        self.performSegue(withIdentifier: "CarDetails", sender: tableView.cellForRow(at: indexPath))
     }
     
     // MARK: Seague -
@@ -66,7 +58,7 @@ class CarTableView: UIViewController, UITableViewDelegate, UITableViewDataSource
         
         if segue.identifier == "CarDetails" {
             
-            let cell  = sender as! UITableViewCell
+            let cell  = sender as! CustomCarCell
             let indexPath = carTableView.indexPath(for: cell)
             
             if let vc = segue.destination as? CarDetails {

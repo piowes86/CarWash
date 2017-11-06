@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="N3b-L2-OSD">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="N3b-L2-OSD">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -24,15 +24,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="G9Z-kT-Y0d">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="81" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="G9Z-kT-Y0d">
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CarCell" id="rpB-q8-7a8">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CarCell" id="rpB-q8-7a8" customClass="CustomCarCell" customModule="CarWash" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="81"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rpB-q8-7a8" id="jc9-ho-fvG">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="80.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <connections>
@@ -107,7 +107,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="feL-Rg-gb8">
                                 <rect key="frame" x="12" y="91" width="92" height="92"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mIb-Lb-NlV">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mIb-Lb-NlV">
                                 <rect key="frame" x="123" y="567" width="140" height="30"/>
                                 <color key="backgroundColor" red="0.076098509132862091" green="0.82871407270431519" blue="0.17202699184417725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -135,6 +135,7 @@
                                 <rect key="frame" x="113" y="282" width="150" height="30"/>
                                 <color key="backgroundColor" red="0.068056084215641022" green="0.71202516555786133" blue="0.97222858667373657" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="BxF-HM-JOW"/>
                                     <constraint firstAttribute="height" constant="30" id="opZ-CN-psI"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
@@ -220,11 +221,12 @@
                             <constraint firstItem="pou-hW-w6N" firstAttribute="trailing" secondItem="tSW-zG-q3B" secondAttribute="trailing" id="CWd-gc-CjO"/>
                             <constraint firstItem="tSW-zG-q3B" firstAttribute="baseline" secondItem="JH3-RR-upw" secondAttribute="baseline" id="EQI-KK-Feo"/>
                             <constraint firstItem="aTC-ID-YQr" firstAttribute="trailing" secondItem="T8H-Hv-h3i" secondAttribute="trailing" id="EVr-j8-374"/>
-                            <constraint firstItem="bWV-KT-zke" firstAttribute="leading" secondItem="fKF-Lo-U00" secondAttribute="leading" constant="113" id="Etf-C9-1ii"/>
+                            <constraint firstItem="bWV-KT-zke" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="fKF-Lo-U00" secondAttribute="leading" id="Etf-C9-1ii"/>
                             <constraint firstItem="feL-Rg-gb8" firstAttribute="top" secondItem="fKF-Lo-U00" secondAttribute="top" constant="27" id="GaH-3A-D3T"/>
                             <constraint firstItem="feL-Rg-gb8" firstAttribute="top" secondItem="jhw-T1-zla" secondAttribute="top" id="Gte-VS-Rgg"/>
                             <constraint firstItem="JH3-RR-upw" firstAttribute="top" secondItem="KKJ-gL-GIb" secondAttribute="bottom" constant="31" id="LMA-tO-3Zc"/>
                             <constraint firstItem="hJ9-xg-rFu" firstAttribute="trailing" secondItem="zi3-pW-qCq" secondAttribute="trailingMargin" id="NTF-BV-WJQ"/>
+                            <constraint firstItem="mIb-Lb-NlV" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="bWV-KT-zke" secondAttribute="trailing" id="P6H-sv-SFK"/>
                             <constraint firstItem="JH3-RR-upw" firstAttribute="trailing" secondItem="ahT-m3-bDy" secondAttribute="trailing" id="QGK-Qj-RvO"/>
                             <constraint firstItem="aTC-ID-YQr" firstAttribute="leading" secondItem="T8H-Hv-h3i" secondAttribute="leading" id="RJd-Nr-NaB"/>
                             <constraint firstItem="pou-hW-w6N" firstAttribute="baseline" secondItem="jNg-13-TeQ" secondAttribute="baseline" id="RLB-P3-213"/>
@@ -245,7 +247,6 @@
                             <constraint firstItem="OtV-ue-09E" firstAttribute="leading" secondItem="jNg-13-TeQ" secondAttribute="leading" id="bBu-Aj-RBd"/>
                             <constraint firstItem="jhw-T1-zla" firstAttribute="trailing" secondItem="KKJ-gL-GIb" secondAttribute="trailing" id="cKq-2x-GPE"/>
                             <constraint firstItem="jNg-13-TeQ" firstAttribute="leading" secondItem="JH3-RR-upw" secondAttribute="leading" id="chq-Gq-PtE"/>
-                            <constraint firstItem="mIb-Lb-NlV" firstAttribute="trailing" secondItem="bWV-KT-zke" secondAttribute="trailing" id="eMK-Ni-RoX"/>
                             <constraint firstItem="jNg-13-TeQ" firstAttribute="trailing" secondItem="JH3-RR-upw" secondAttribute="trailing" id="fTh-3Z-hwN"/>
                             <constraint firstItem="aTC-ID-YQr" firstAttribute="baseline" secondItem="ahT-m3-bDy" secondAttribute="baseline" id="h2Z-cg-gtm"/>
                             <constraint firstItem="KKJ-gL-GIb" firstAttribute="trailing" secondItem="pou-hW-w6N" secondAttribute="trailing" id="hF5-jt-lEf"/>
@@ -256,6 +257,7 @@
                             <constraint firstItem="jhw-T1-zla" firstAttribute="baseline" secondItem="hJ9-xg-rFu" secondAttribute="baseline" id="rXT-wx-KgR"/>
                             <constraint firstItem="tSW-zG-q3B" firstAttribute="leading" secondItem="fKF-Lo-U00" secondAttribute="leading" constant="124" id="rZl-hZ-aYV"/>
                             <constraint firstItem="tSW-zG-q3B" firstAttribute="leading" secondItem="aTC-ID-YQr" secondAttribute="leading" id="soT-Ff-MyL"/>
+                            <constraint firstItem="mIb-Lb-NlV" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="zi3-pW-qCq" secondAttribute="leading" constant="20" symbolic="YES" id="tAc-ay-z50"/>
                             <constraint firstItem="KKJ-gL-GIb" firstAttribute="baseline" secondItem="OtV-ue-09E" secondAttribute="baseline" id="tvR-dh-uOT"/>
                             <constraint firstItem="JH3-RR-upw" firstAttribute="leading" secondItem="fKF-Lo-U00" secondAttribute="leading" constant="212" id="uM0-m3-dCq"/>
                             <constraint firstItem="KKJ-gL-GIb" firstAttribute="top" secondItem="jhw-T1-zla" secondAttribute="bottom" id="vUn-Da-pkM"/>
@@ -329,15 +331,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ehr-cj-i1R">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="81" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ehr-cj-i1R">
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="CarCellDone" id="Ixy-Te-iYw">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="28" width="375" height="81"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ixy-Te-iYw" id="18Q-gO-2c9">
-                                            <rect key="frame" x="0.0" y="0.0" width="342" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="80.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <connections>
