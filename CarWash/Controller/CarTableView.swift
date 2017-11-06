@@ -16,16 +16,25 @@ class CarTableView: UIViewController, UITableViewDelegate, UITableViewDataSource
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        for car in carListObject.carList {
-            !car.cleaned ? carList.append(car) : nil
-        }
-        
         carTableView.delegate = self
         carTableView.dataSource = self
         
         carTableView.register(UINib(nibName: "CarCell", bundle: nil), forCellReuseIdentifier: "customCarCell")
         carTableView.separatorInset = UIEdgeInsets.zero // Remove TableView default spacing from left
         carTableView.tableFooterView = UIView() // Remove empty rows from bottom
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
+        if self.restorationIdentifier == "Pending" {
+            for car in carListObject.carList {
+                !car.cleaned ? carList.append(car) : nil
+            }
+        } else {
+            for car in carListObject.carList {
+                carList.append(car)
+            }
+        }
     }
     
     // MARK: TableView Methods -
