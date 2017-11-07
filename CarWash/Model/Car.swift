@@ -16,18 +16,18 @@ class Car {
     var brand : String = ""
     var model : String = ""
     var type : CarType!
-    var cleaned : Bool = false
+    var status : String = ""
     var adoptionDate : String = ""
     var washingDate : String = ""
     var completionTimeLimit : String = ""
     
-    init(plate: String, brand: String, model: String, type: CarType, cleaned: Bool, adoptionDate: String, washingDate: String, completionTimeLimit: String) {
+    init(plate: String, brand: String, model: String, type: CarType, status: String, adoptionDate: String, washingDate: String, completionTimeLimit: String) {
         
         self.plate = plate
         self.brand = brand
         self.model = model
         self.type = type
-        self.cleaned = cleaned
+        self.status = status
         self.adoptionDate = adoptionDate
         self.washingDate = washingDate
         self.completionTimeLimit = completionTimeLimit

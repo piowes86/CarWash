@@ -1,26 +1,27 @@
  import UIKit
+ import MapKit
  
  class CarDetails: UIViewController {
     
     // MARK: Instance variables -
     
     var carDetails : Car!
+    var delegate = UIApplication.shared.delegate as! AppDelegate
+    lazy var carListObject = delegate.carListGlobal
     var carDoorStatus = false
     var paymentStatus = false
+    let regionRadius: CLLocationDistance = 1000 // For need of setting mapView
     
     // MARK: IBOutlets -
     
+    @IBOutlet var titleLabel: UILabel!
+    @IBOutlet var personAcronymButton: UIButton!
     @IBOutlet weak var brandLogo: UIImageView!
-    
-    @IBOutlet weak var modelLabel: UILabel!
-    @IBOutlet weak var typeLabel: UILabel!
     @IBOutlet weak var plateLabel: UILabel!
-    @IBOutlet weak var cleanedLabel: UILabel!
-    @IBOutlet weak var adoptionDateLabel: UILabel!
-    @IBOutlet weak var completionTimeLimitLabel: UILabel!
-    
-    @IBOutlet weak var openCloseCarButton: UIButton!
-    @IBOutlet weak var payForCarWashButton: UIButton!
+    @IBOutlet var startButton: UIButton!
+    @IBOutlet var lockUnlockSg: UISegmentedControl!
+    @IBOutlet var responsiblePersonLabel: UILabel!
+    @IBOutlet var mapView: MKMapView!
     
     // MARK: System Methods -
     
@@ -28,37 +29,29 @@
         super.viewDidLoad()
         
         setCarLogo(carBrand: carDetails.brand)
-        modelLabel.text = carDetails.model
-        typeLabel.text = getCarType(carType: carDetails.type)
         plateLabel.text = carDetails.plate
-        cleanedLabel.text = getCarStatus(status: carDetails.cleaned)
-        adoptionDateLabel.text = carDetails.adoptionDate
-        completionTimeLimitLabel.text = carDetails.completionTimeLimit
+        
+        lockUnlockSg.isHidden = true
+        responsiblePersonLabel.isHidden = false
+        personAcronymButton.isHidden = true
+        
+        let initialLocation = CLLocation(latitude: 52.389030, longitude: 13.509986)
+        centerMapOnLocation(location: initialLocation)
     }
     
     // MARK: IBActions -
     
-    @IBAction func openCLoseCar(_ sender: UIButton) {
+    @IBAction func startNewRequest(_ sender: UIButton) {
         
-        if carDoorStatus {
-            openCloseCarButton.setTitle("Open Car", for: .normal)
-            openCloseCarButton.backgroundColor = UIColor(red: 78/255, green: 180/255, blue: 242/255, alpha: 1.0)
-        } else {
-            openCloseCarButton.setTitle("Close Car", for: .normal)
-            openCloseCarButton.backgroundColor = UIColor(red: 238/255, green: 80/255, blue: 80/255, alpha: 1.0)
-        }
+        startButton.isHidden = true
+        lockUnlockSg.isHidden = false
+        lockUnlockSg.selectedSegmentIndex = 0
+        lockUnlockSg.isSelected = true
+        responsiblePersonLabel.isHidden = true
+        titleLabel.text = ""
+        personAcronymButton.isHidden = false
         
-        carDoorStatus = !carDoorStatus
-    }
-    
-    @IBAction func payForCarWash(_ sender: UIButton) {
-        
-        if !paymentStatus {
-            payForCarWashButton.setTitle("CarWash Paid", for: .normal)
-            payForCarWashButton.isEnabled = false
-            payForCarWashButton.backgroundColor = UIColor(red: 238/255, green: 80/255, blue: 80/255, alpha: 1.0)
-            paymentStatus = true
-        }
+        updateCarStatus(car: carDetails, status: "ongoing")
     }
     
     // MARK: Custom Methods -
@@ -82,6 +75,17 @@
     func getCarStatus(status: Bool) -> String {
         
         return status ? "Cleaned" : "Not Cleaned"
+    }
+    
+    func centerMapOnLocation(location: CLLocation) {
+        let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate,
+                                                                  regionRadius, regionRadius)
+        mapView.setRegion(coordinateRegion, animated: true)
+    }
+    
+    func updateCarStatus(car: Car, status: String) {
+        carListObject.carList.lazy.filter{ $0.plate == car.plate }.first?.status = status
+        
     }
  }
  

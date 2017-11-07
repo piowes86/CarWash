@@ -5,7 +5,8 @@ class CarTableView: UIViewController, UITableViewDelegate, UITableViewDataSource
     // MARK: Instance variables -
     
     var carList = [Car]()
-    var carListObject = CarList()
+    var delegate = UIApplication.shared.delegate as! AppDelegate
+    lazy var carListObject = delegate.carListGlobal
     
     // MARK: IBOutlets -
     
@@ -30,9 +31,12 @@ class CarTableView: UIViewController, UITableViewDelegate, UITableViewDataSource
     
     override func viewWillAppear(_ animated: Bool) {
         
+        carList = [];
+        
         if self.restorationIdentifier == "Pending" {
             for car in carListObject.carList {
-                !car.cleaned ? carList.append(car) : nil
+                car.status == "new" ? carList.append(car) : nil
+                carTableView.reloadData()
             }
         } else {
             for car in carListObject.carList {
@@ -58,7 +62,7 @@ class CarTableView: UIViewController, UITableViewDelegate, UITableViewDataSource
         let cell = tableView.dequeueReusableCell(withIdentifier: "customCarCell", for: indexPath) as! CustomCarCell
         cell.brandLogoImage.image = setCarLogo(carBrand: carList[indexPath.row].brand)
         cell.executionTimeLabel.text = carList[indexPath.row].adoptionDate
-        cell.serviceTypeLabel.text = carList[indexPath.row].cleaned ? "" : "FULL CLEANING"
+        cell.serviceTypeLabel.text = carList[indexPath.row].status != "done" ? "FULL CLEANING" : "DONE"
         
         cell.executionTimeLabel.text = carList[indexPath.row].adoptionDate
         
