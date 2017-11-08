@@ -45,8 +45,6 @@ class CarTableView: UIViewController, UITableViewDelegate, UITableViewDataSource
         }
     }
     
-    
-    
     // MARK: TableView Methods -
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -60,11 +58,9 @@ class CarTableView: UIViewController, UITableViewDelegate, UITableViewDataSource
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "customCarCell", for: indexPath) as! CustomCarCell
-        cell.brandLogoImage.image = setCarLogo(carBrand: carList[indexPath.row].brand)
-        cell.executionTimeLabel.text = carList[indexPath.row].adoptionDate
+        cell.statusCarImage.image = setStatusImage(carStatus: carList[indexPath.row].status)
+        cell.executionTimeLabel.text = "Due to: \(carList[indexPath.row].adoptionDate)"
         cell.serviceTypeLabel.text = carList[indexPath.row].status != "done" ? "FULL CLEANING" : "DONE"
-        
-        cell.executionTimeLabel.text = carList[indexPath.row].adoptionDate
         
         return cell
     }
@@ -88,15 +84,20 @@ class CarTableView: UIViewController, UITableViewDelegate, UITableViewDataSource
         }
     }
     
-    func setCarLogo(carBrand: String) -> UIImage {
+    func setStatusImage(carStatus: String) -> UIImage {
         
-        if carBrand == "Mercedes" {
-            return UIImage(named: "mercedes_logo")!
-        } else if carBrand == "BMW" {
-            return UIImage(named: "bmw_logo")!
-        } else {
-            return UIImage(named: "audi_logo")!
+        var statusLogo: UIImage?
+        
+        switch carStatus {
+        case "ongoing":
+            statusLogo = UIImage(named: "orange_car")!
+        case "done":
+            statusLogo = UIImage(named: "green_car")!
+        default:
+            statusLogo = UIImage(named: "red_car")!
         }
+        
+        return statusLogo!
     }
     
 }

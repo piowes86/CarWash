@@ -2,7 +2,7 @@ import UIKit
 
 class CustomCarCell: UITableViewCell {
 
-    @IBOutlet var brandLogoImage: UIImageView!
+    @IBOutlet var statusCarImage: UIImageView!
     @IBOutlet var executionTimeLabel: UILabel!
     @IBOutlet var serviceTypeLabel: UILabel!
     
