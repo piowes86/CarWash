@@ -5,6 +5,7 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -24,40 +25,38 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="green_car" translatesAutoresizingMaskIntoConstraints="NO" id="lZJ-ke-r9T">
-                        <rect key="frame" x="5" y="3" width="75" height="75"/>
+                        <rect key="frame" x="16" y="3" width="75" height="75"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="75" id="KU2-l2-o4j"/>
-                            <constraint firstAttribute="width" constant="75" id="xqk-G4-yxg"/>
+                            <constraint firstAttribute="width" constant="75" id="PD2-wj-Av2"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Due to: 28.10.2017" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y3j-iz-wGf">
-                        <rect key="frame" x="86" y="17" width="220" height="21"/>
+                        <rect key="frame" x="97" y="17" width="181" height="21"/>
                         <constraints>
-                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="220" id="2iz-Ap-qk7"/>
-                            <constraint firstAttribute="height" constant="21" id="vT4-pv-9al"/>
+                            <constraint firstAttribute="height" constant="21" id="U4W-md-P0i"/>
                         </constraints>
                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FULL CLEANING" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iba-fY-sDf">
-                        <rect key="frame" x="106" y="49" width="202" height="21"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="21" id="Hqd-nU-sqt"/>
-                            <constraint firstAttribute="width" constant="202" id="ZTl-RH-QdG"/>
-                        </constraints>
+                        <rect key="frame" x="117" y="49" width="161" height="21"/>
                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="Iba-fY-sDf" firstAttribute="top" secondItem="Y3j-iz-wGf" secondAttribute="bottom" constant="11" id="B5i-3v-uSi"/>
-                    <constraint firstItem="Y3j-iz-wGf" firstAttribute="trailing" secondItem="Iba-fY-sDf" secondAttribute="trailing" constant="-2" id="KHa-9R-qG4"/>
-                    <constraint firstItem="lZJ-ke-r9T" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="XMa-tv-LQ9"/>
-                    <constraint firstItem="Y3j-iz-wGf" firstAttribute="leading" secondItem="lZJ-ke-r9T" secondAttribute="trailing" constant="6" id="b6f-G9-f5u"/>
-                    <constraint firstItem="lZJ-ke-r9T" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="3" id="dtT-z2-FhW"/>
-                    <constraint firstItem="Y3j-iz-wGf" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="17" id="wKa-GL-esc"/>
+                    <constraint firstItem="Iba-fY-sDf" firstAttribute="leading" secondItem="lZJ-ke-r9T" secondAttribute="trailing" constant="26" id="1PO-Fh-cyf"/>
+                    <constraint firstItem="lZJ-ke-r9T" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="2L4-xZ-gdm"/>
+                    <constraint firstItem="lZJ-ke-r9T" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-8" id="OVs-3T-whZ"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="Y3j-iz-wGf" secondAttribute="trailing" id="UOM-UT-LJz"/>
+                    <constraint firstItem="lZJ-ke-r9T" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Ywy-Bp-nmv"/>
+                    <constraint firstItem="Iba-fY-sDf" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" id="Z2T-hY-7Vw"/>
+                    <constraint firstItem="Iba-fY-sDf" firstAttribute="top" secondItem="Y3j-iz-wGf" secondAttribute="bottom" constant="11" id="ZCh-NB-gZD"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="Iba-fY-sDf" secondAttribute="trailing" id="nZH-Wo-foo"/>
+                    <constraint firstItem="Y3j-iz-wGf" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="6" id="sQB-Cf-ajk"/>
+                    <constraint firstItem="Y3j-iz-wGf" firstAttribute="leading" secondItem="lZJ-ke-r9T" secondAttribute="trailing" constant="6" id="t3j-1w-fvd"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
