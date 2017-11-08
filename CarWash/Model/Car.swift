@@ -21,8 +21,9 @@ class Car {
     var washingDate : String = ""
     var completionTimeLimit : String = ""
     var responsiblePerson : String = ""
+    var responsiblePersonAcronym : String = ""
     
-    init(plate: String, brand: String, model: String, type: CarType, status: String, adoptionDate: String, washingDate: String, completionTimeLimit: String, responsiblePerson: String) {
+    init(plate: String, brand: String, model: String, type: CarType, status: String, adoptionDate: String, washingDate: String, completionTimeLimit: String, responsiblePerson: String, responsiblePersonAcronym: String) {
         
         self.plate = plate
         self.brand = brand
@@ -33,5 +34,6 @@ class Car {
         self.washingDate = washingDate
         self.completionTimeLimit = completionTimeLimit
         self.responsiblePerson = responsiblePerson
+        self.responsiblePersonAcronym = responsiblePersonAcronym
     }
 }

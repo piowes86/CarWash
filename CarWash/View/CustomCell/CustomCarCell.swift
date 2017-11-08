@@ -5,6 +5,8 @@ class CustomCarCell: UITableViewCell {
     @IBOutlet var statusCarImage: UIImageView!
     @IBOutlet var executionTimeLabel: UILabel!
     @IBOutlet var serviceTypeLabel: UILabel!
+    @IBOutlet var responsiblePersonAcronym: UIImageView!
+    @IBOutlet var responsiblePersonAcronymLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

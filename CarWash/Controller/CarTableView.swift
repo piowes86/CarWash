@@ -58,8 +58,24 @@ class CarTableView: UIViewController, UITableViewDelegate, UITableViewDataSource
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "customCarCell", for: indexPath) as! CustomCarCell
-        cell.statusCarImage.image = setStatusImage(carStatus: carList[indexPath.row].status)
-        cell.executionTimeLabel.text = "Due to: \(carList[indexPath.row].adoptionDate)"
+        
+        let images = setImagesWithStatus(carStatus: carList[indexPath.row].status)
+        
+        cell.statusCarImage.image = images.0!
+        
+        if let image = images.1 {
+            cell.responsiblePersonAcronym.isHidden = false
+            cell.responsiblePersonAcronym.image = image
+            cell.responsiblePersonAcronymLabel.isHidden = false
+            cell.responsiblePersonAcronymLabel.text = carList[indexPath.row].responsiblePersonAcronym
+        } else {
+            cell.responsiblePersonAcronym.isHidden = true
+            cell.responsiblePersonAcronym.image = nil
+            cell.responsiblePersonAcronymLabel.isHidden = true
+            cell.responsiblePersonAcronymLabel.text = ""
+        }
+        
+        cell.executionTimeLabel.text = carList[indexPath.row].status != "done" ? "Due to: \(carList[indexPath.row].adoptionDate)" : ""
         cell.serviceTypeLabel.text = carList[indexPath.row].status != "done" ? "FULL CLEANING" : "DONE"
         
         return cell
@@ -84,20 +100,24 @@ class CarTableView: UIViewController, UITableViewDelegate, UITableViewDataSource
         }
     }
     
-    func setStatusImage(carStatus: String) -> UIImage {
+    func setImagesWithStatus(carStatus: String) -> (UIImage?, UIImage?) {
         
         var statusLogo: UIImage?
+        var responsiblePersonAcronymBackground: UIImage?
         
         switch carStatus {
         case "ongoing":
             statusLogo = UIImage(named: "orange_car")!
+            responsiblePersonAcronymBackground = UIImage(named: "yellow_background")
         case "done":
             statusLogo = UIImage(named: "green_car")!
+            responsiblePersonAcronymBackground = UIImage(named: "gray_background")
         default:
             statusLogo = UIImage(named: "red_car")!
+            responsiblePersonAcronymBackground = UIImage(named: "")
         }
         
-        return statusLogo!
+        return (statusLogo, responsiblePersonAcronymBackground)
     }
     
 }

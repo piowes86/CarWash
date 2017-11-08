@@ -25,43 +25,63 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="green_car" translatesAutoresizingMaskIntoConstraints="NO" id="lZJ-ke-r9T">
-                        <rect key="frame" x="16" y="3" width="75" height="75"/>
+                        <rect key="frame" x="21" y="3" width="75" height="75"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="75" id="PD2-wj-Av2"/>
+                            <constraint firstAttribute="width" constant="75" id="Qtz-Zx-D7o"/>
+                        </constraints>
+                    </imageView>
+                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="yellow_background" translatesAutoresizingMaskIntoConstraints="NO" id="rLy-By-LSN">
+                        <rect key="frame" x="101" y="9" width="65" height="65"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="65" id="AWA-et-kSc"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Due to: 28.10.2017" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y3j-iz-wGf">
-                        <rect key="frame" x="97" y="17" width="181" height="21"/>
+                        <rect key="frame" x="152" y="17" width="126" height="21"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="21" id="U4W-md-P0i"/>
+                            <constraint firstAttribute="height" constant="21" id="gUH-Uj-xiC"/>
                         </constraints>
                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FULL CLEANING" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iba-fY-sDf">
-                        <rect key="frame" x="117" y="49" width="161" height="21"/>
+                        <rect key="frame" x="152" y="49" width="126" height="21"/>
                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="DU" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wZ8-YW-G9u">
+                        <rect key="frame" x="112" y="31" width="42" height="21"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="25"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="Iba-fY-sDf" firstAttribute="leading" secondItem="lZJ-ke-r9T" secondAttribute="trailing" constant="26" id="1PO-Fh-cyf"/>
-                    <constraint firstItem="lZJ-ke-r9T" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="2L4-xZ-gdm"/>
-                    <constraint firstItem="lZJ-ke-r9T" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-8" id="OVs-3T-whZ"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="Y3j-iz-wGf" secondAttribute="trailing" id="UOM-UT-LJz"/>
-                    <constraint firstItem="lZJ-ke-r9T" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Ywy-Bp-nmv"/>
-                    <constraint firstItem="Iba-fY-sDf" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" id="Z2T-hY-7Vw"/>
-                    <constraint firstItem="Iba-fY-sDf" firstAttribute="top" secondItem="Y3j-iz-wGf" secondAttribute="bottom" constant="11" id="ZCh-NB-gZD"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="Iba-fY-sDf" secondAttribute="trailing" id="nZH-Wo-foo"/>
-                    <constraint firstItem="Y3j-iz-wGf" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="6" id="sQB-Cf-ajk"/>
-                    <constraint firstItem="Y3j-iz-wGf" firstAttribute="leading" secondItem="lZJ-ke-r9T" secondAttribute="trailing" constant="6" id="t3j-1w-fvd"/>
+                    <constraint firstItem="lZJ-ke-r9T" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="2JE-Nk-YF3"/>
+                    <constraint firstItem="wZ8-YW-G9u" firstAttribute="centerY" secondItem="rLy-By-LSN" secondAttribute="centerY" id="Chb-Af-MnU"/>
+                    <constraint firstItem="Iba-fY-sDf" firstAttribute="top" secondItem="Y3j-iz-wGf" secondAttribute="bottom" constant="11" id="Dzl-0b-Slj"/>
+                    <constraint firstItem="Y3j-iz-wGf" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="6" id="E8O-Og-wNu"/>
+                    <constraint firstItem="Y3j-iz-wGf" firstAttribute="leading" secondItem="lZJ-ke-r9T" secondAttribute="trailing" constant="56" id="MuX-bC-BY8"/>
+                    <constraint firstItem="lZJ-ke-r9T" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="5" id="Rk7-9w-Wst"/>
+                    <constraint firstItem="Iba-fY-sDf" firstAttribute="leading" secondItem="lZJ-ke-r9T" secondAttribute="trailing" constant="56" id="d55-rD-1xW"/>
+                    <constraint firstItem="rLy-By-LSN" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="85" id="e69-ET-Eec"/>
+                    <constraint firstItem="lZJ-ke-r9T" firstAttribute="bottom" secondItem="rLy-By-LSN" secondAttribute="bottom" constant="4" id="jov-yw-l1P"/>
+                    <constraint firstItem="lZJ-ke-r9T" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-8" id="kG9-vf-vIf"/>
+                    <constraint firstItem="lZJ-ke-r9T" firstAttribute="top" secondItem="rLy-By-LSN" secondAttribute="top" constant="-6" id="lQt-du-DOI"/>
+                    <constraint firstItem="Y3j-iz-wGf" firstAttribute="trailing" secondItem="Iba-fY-sDf" secondAttribute="trailing" id="mcP-e3-XTZ"/>
+                    <constraint firstItem="Y3j-iz-wGf" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="q6r-cq-VxF"/>
+                    <constraint firstItem="wZ8-YW-G9u" firstAttribute="centerX" secondItem="rLy-By-LSN" secondAttribute="centerX" id="rxO-PZ-z87"/>
+                    <constraint firstItem="Iba-fY-sDf" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" id="uol-38-Jdm"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="executionTimeLabel" destination="Y3j-iz-wGf" id="KHa-dO-AwU"/>
+                <outlet property="responsiblePersonAcronym" destination="rLy-By-LSN" id="Lb1-oO-Po3"/>
+                <outlet property="responsiblePersonAcronymLabel" destination="wZ8-YW-G9u" id="0lt-Xc-11k"/>
                 <outlet property="serviceTypeLabel" destination="Iba-fY-sDf" id="jdg-a3-PP8"/>
                 <outlet property="statusCarImage" destination="lZJ-ke-r9T" id="FAA-Hc-DqQ"/>
             </connections>
@@ -70,5 +90,6 @@
     </objects>
     <resources>
         <image name="green_car" width="66" height="66"/>
+        <image name="yellow_background" width="66" height="66"/>
     </resources>
 </document>

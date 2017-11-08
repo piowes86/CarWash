@@ -44,6 +44,7 @@
         
         updateCarStatus(car: carDetails, status: "ongoing")
         carListObject.carList.lazy.filter{ $0.plate == self.carDetails.plate }.first?.responsiblePerson = "David Underhill"
+        carListObject.carList.lazy.filter{ $0.plate == self.carDetails.plate }.first?.responsiblePersonAcronym = "DU"
         checkCarStatus()
     }
     
@@ -82,11 +83,12 @@
         if carDetails.status == "ongoing" {
             
             titleLabel.text = ""
-            personAcronymButton.title = "DU"
+            personAcronymButton.title = carDetails.responsiblePersonAcronym
             startButton.isHidden = true
             lockUnlockSg.isHidden = false
             lockUnlockSg.isSelected = true
             responsiblePersonLabel.isHidden = false
+            responsiblePersonLabel.text = carDetails.responsiblePerson
         } else if carDetails.status == "new" {
             
             plateLabel.text = carDetails.plate
