@@ -36,13 +36,15 @@ class CarTableView: UIViewController, UITableViewDelegate, UITableViewDataSource
         if self.restorationIdentifier == "Pending" {
             for car in carListObject.carList {
                 car.status == "new" ? carList.append(car) : nil
-                carTableView.reloadData()
             }
         } else {
             for car in carListObject.carList {
                 carList.append(car)
             }
         }
+        
+        
+        carTableView.reloadData()
     }
     
     // MARK: TableView Methods -

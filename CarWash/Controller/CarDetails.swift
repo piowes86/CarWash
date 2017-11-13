@@ -54,10 +54,19 @@
     }
     
     @IBAction func finishButton(_ sender: UIButton) {
+
+        if self.lockUnlockSg.selectedSegmentIndex == 1 {
+            let alert = UIAlertController(title: "Warning", message: "The car has to ble closed if you want to finish the task.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .`default`, handler: { _ in
+                NSLog("The \"OK\" alert occured.")
+            }))
+            self.present(alert, animated: true, completion: nil)
+        } else {
+            carListObject.carList.lazy.filter{ $0.plate == self.carDetails.plate }.first?.status = "done"
+            finishButton.isEnabled = false
+            checkCarStatus()
+        }
         
-        carListObject.carList.lazy.filter{ $0.plate == self.carDetails.plate }.first?.status = "done"
-        finishButton.isEnabled = false
-        checkCarStatus()
     }
     
     // MARK: Custom Methods -
@@ -80,23 +89,24 @@
     
     func checkCarStatus() {
         
+        plateLabel.text = carDetails.plate
+        
         if carDetails.status == "ongoing" {
-            
             titleLabel.text = ""
             personAcronymButton.title = carDetails.responsiblePersonAcronym
             startButton.isHidden = true
             lockUnlockSg.isHidden = false
             lockUnlockSg.isSelected = true
             responsiblePersonLabel.isHidden = false
-            responsiblePersonLabel.text = carDetails.responsiblePerson
+            responsiblePersonLabel.text = "Responsible person: \(carDetails.responsiblePerson)"
         } else if carDetails.status == "new" {
-            
-            plateLabel.text = carDetails.plate
             lockUnlockSg.isHidden = true
-            responsiblePersonLabel.isHidden = true
+            responsiblePersonLabel.isHidden = false
             finishButton.isHidden = true;
         } else {
-            
+            startButton.isHidden = true
+            lockUnlockSg.isHidden = false
+            lockUnlockSg.isEnabled = false
             lockUnlockSg.isEnabled = false
             finishButton.isHidden = false
             finishButton.tintColor = UIColor.darkGray
