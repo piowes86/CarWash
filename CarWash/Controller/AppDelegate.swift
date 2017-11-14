@@ -15,7 +15,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var carListGlobal = CarList.init()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        let tabBarController: UITabBarController = self.window?.rootViewController as! UITabBarController
+        let tabBar: UITabBar = tabBarController.tabBar
+        
+        
+        let tabBarItem1 = tabBar.items![0]
+        tabBarItem1.title = "Pending"
+        tabBarItem1.image = UIImage(named: "tabbar_white")?.withRenderingMode(.alwaysOriginal)
+        tabBarItem1.selectedImage = UIImage(named: "tabbar_red")?.withRenderingMode(.alwaysOriginal)
+        tabBarItem1.titlePositionAdjustment.vertical = tabBarItem1.titlePositionAdjustment.vertical-2
+        tabBarItem1.setTitleTextAttributes([NSAttributedStringKey.foregroundColor: UIColor.white], for: UIControlState.normal)
+        tabBarItem1.setTitleTextAttributes([NSAttributedStringKey.foregroundColor : UIColor.red], for: UIControlState.highlighted)
+        
+        let tabBarItem2 = tabBar.items![1]
+        tabBarItem2.title = "All"
+        tabBarItem2.image = UIImage(named: "tabbar_white")?.withRenderingMode(.alwaysOriginal)
+        tabBarItem2.selectedImage = UIImage(named: "tabbar_green")?.withRenderingMode(.alwaysOriginal)
+        tabBarItem2.titlePositionAdjustment.vertical = tabBarItem2.titlePositionAdjustment.vertical-2
+        tabBarItem2.setTitleTextAttributes([NSAttributedStringKey.foregroundColor: UIColor.white], for: UIControlState.normal)
+        tabBarItem2.setTitleTextAttributes([NSAttributedStringKey.foregroundColor : UIColor.green], for: UIControlState.highlighted)
+        
+//        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedStringKey.foregroundColor: UIColor .white], for: UIControlState.normal)
+//
+//        var titleHighlightedColor = UIColor(red: 153/255.0, green: 192/255.0, blue: 48/255.0, alpha: 1.0)
+//
+//        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedStringKey.foregroundColor : titleHighlightedColor], for: UIControlState.highlighted)
+        
         return true
     }
 

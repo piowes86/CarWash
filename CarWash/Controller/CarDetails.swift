@@ -65,7 +65,7 @@
             updateCarStatus(car: carDetails, status: "done")
             //carListObject.carList.lazy.filter{ $0.plate == self.carDetails.plate }.first?.status = "done"
             finishButton.isEnabled = false
-            checkCarStatus()
+            _ = navigationController?.popViewController(animated: true)
         }
         
     }

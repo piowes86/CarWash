@@ -64,7 +64,7 @@
         <scene sceneID="1tT-dh-kBD">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ODN-Zy-o4B" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Pending" image="list" id="5Ij-dE-GIi"/>
+                    <tabBarItem key="tabBarItem" title="Pending" id="5Ij-dE-GIi"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="1XG-Wl-kC9">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -146,7 +146,7 @@
         <scene sceneID="Mpt-90-Myd">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vER-TJ-gCa" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="All" image="list" id="Vzy-Az-PtV"/>
+                    <tabBarItem key="tabBarItem" title="All" id="Vzy-Az-PtV"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="fSZ-LY-o1y">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -287,15 +287,15 @@
                                             <constraint firstAttribute="height" constant="185" id="HJL-zs-x0Y"/>
                                         </constraints>
                                     </mapView>
-                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" translatesAutoresizingMaskIntoConstraints="NO" id="mTr-e4-EcA">
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="bar" translatesAutoresizingMaskIntoConstraints="NO" id="mTr-e4-EcA">
                                         <rect key="frame" x="19" y="53" width="305" height="46"/>
                                         <color key="backgroundColor" red="0.068056084215641022" green="0.71202516555786133" blue="0.97222858667373657" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="45" id="bQ1-us-E5J"/>
                                         </constraints>
                                         <segments>
-                                            <segment title="Locked"/>
-                                            <segment title="Unlock the car"/>
+                                            <segment title="Lock"/>
+                                            <segment title="Unlock"/>
                                         </segments>
                                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
@@ -382,7 +382,6 @@
     </scenes>
     <resources>
         <image name="black_car_icon" width="66" height="66"/>
-        <image name="list" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="ERq-io-S1o"/>
