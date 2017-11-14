@@ -334,7 +334,6 @@
                                 </state>
                                 <connections>
                                     <action selector="finishButton:" destination="ngk-08-Kuf" eventType="touchUpInside" id="WRU-xu-rxj"/>
-                                    <action selector="startNewRequest:" destination="ngk-08-Kuf" eventType="touchUpInside" id="gd9-Nv-8DT"/>
                                 </connections>
                             </button>
                         </subviews>

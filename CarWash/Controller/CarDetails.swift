@@ -62,7 +62,8 @@
             }))
             self.present(alert, animated: true, completion: nil)
         } else {
-            carListObject.carList.lazy.filter{ $0.plate == self.carDetails.plate }.first?.status = "done"
+            updateCarStatus(car: carDetails, status: "done")
+            //carListObject.carList.lazy.filter{ $0.plate == self.carDetails.plate }.first?.status = "done"
             finishButton.isEnabled = false
             checkCarStatus()
         }
@@ -83,8 +84,8 @@
     }
     
     func updateCarStatus(car: Car, status: String) {
-        
         carListObject.carList.lazy.filter{ $0.plate == car.plate }.first?.status = status
+        carDetails.status = status;
     }
     
     func checkCarStatus() {
