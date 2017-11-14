@@ -43,7 +43,6 @@ class CarTableView: UIViewController, UITableViewDelegate, UITableViewDataSource
             }
         }
         
-        
         carTableView.reloadData()
     }
     

@@ -38,6 +38,10 @@
         checkCarStatus()
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        _ = navigationController?.popViewController(animated: false)
+    }
+    
     // MARK: IBActions -
     
     @IBAction func startNewRequest(_ sender: UIButton) {
